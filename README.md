@@ -3,13 +3,16 @@
 ---
 
 <p align="center">
-  <img src="https://travis-ci.org/GooeyNyan/Pomelook.svg" alt="Build Status">
+
+  <a href="https://travis-ci.org/GooeyNyan/Pomelook">
+    <img src="https://travis-ci.org/GooeyNyan/Pomelook.svg" alt="Build Status">
+  </a>
   <a href="https://codecov.io/gh/GooeyNyan/Pomelook">
-    <img src="https://codecov.io/gh/GooeyNyan/Pomelook/branch/master/graph/badge.svg" />
+    <img src="https://codecov.io/gh/GooeyNyan/Pomelook/branch/master/graph/badge.svg">
   </a>
   <img src="https://david-dm.org/GooeyNyan/Pomelook.svg" alt="Dependencies">
   <a href="https://codeclimate.com/github/GooeyNyan/Pomelook/maintainability">
-    <img src="https://api.codeclimate.com/v1/badges/3a507ed8f70c9d24551f/maintainability"/>
+    <img src="https://api.codeclimate.com/v1/badges/55dde9482c9f1def79f1/maintainability" alt="codeclimate">
   </a>
 </p>
 
