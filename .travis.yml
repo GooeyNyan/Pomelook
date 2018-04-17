@@ -6,6 +6,12 @@ node_js:
   - "9"
   - "8"
 
-install: yarn install
+install:
+  - yarn install
+  - yarn global add codecov
 script:
   - yarn test --findRelatedTests --collectCoverage='false'
+  - codecov
+os:
+  - linux
+  - osx
