@@ -6,6 +6,7 @@
   <img src="	https://img.shields.io/travis/GooeyNyan/Pomelook.svg" alt="Build Status">
   <img src="https://img.shields.io/codecov/c/github/GooeyNyan/Pomelook.svg" alt="Coverage Status">
   <img src="https://david-dm.org/GooeyNyan/Pomelook.svg" alt="Coverage Status">
+  <a href="https://codeclimate.com/github/GooeyNyan/Pomelook/maintainability"><img src="https://api.codeclimate.com/v1/badges/3a507ed8f70c9d24551f/maintainability"/></a>
 </p>
 
 ---
