@@ -1,7 +1,7 @@
 import { configure } from "enzyme";
-import * as Adapter from "enzyme-adapter-react-16";
+import enzymeAdapterReact16 from "enzyme-adapter-react-16";
 
-configure({ adapter: new Adapter() });
+configure({ adapter: new enzymeAdapterReact16() });
 
 // unsafe hack
 console.error = () => null;

@@ -8,11 +8,13 @@ export interface IProps {
   onDecrement?: () => void;
 }
 
+const voidReturnFn = () => null;
+
 const hello = ({
   name,
   enthusiasmLevel = 1,
-  onIncrement = null,
-  onDecrement = null
+  onIncrement,
+  onDecrement
 }: IProps) => {
   if (enthusiasmLevel <= 0) {
     throw new Error(`You could be a little more enthusiastic. :D`);
@@ -27,7 +29,7 @@ const hello = ({
         <View style={styles.button}>
           <Button
             title="-"
-            onPress={onDecrement || (() => null)}
+            onPress={onDecrement || voidReturnFn}
             accessibilityLabel="decrement"
             color="#208fb2"
           />
@@ -35,7 +37,7 @@ const hello = ({
         <View style={styles.button}>
           <Button
             title="+"
-            onPress={onIncrement || (() => null)}
+            onPress={onIncrement || voidReturnFn}
             accessibilityLabel="increment"
             color="#20b2aa"
           />

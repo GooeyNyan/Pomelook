@@ -3,23 +3,19 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "tsc --watch & node node_modules/react-native/local-cli/cli.js start",
+    "start":
+      "tsc --watch & node node_modules/react-native/local-cli/cli.js start",
     "android": "node_modules/.bin/react-native run-android",
     "ios": "node_modules/.bin/react-native run-ios",
     "test": "./node_modules/.bin/jest",
     "test:watch": "yarn test --watchAll",
     "test:coverage": "yarn test --coverage",
-    "lint": "./node_modules/.bin/tslint -p .",
+    "lint": "./node_modules/.bin/tslint -p . -c ./tslint.json",
     "prettier": "yarn lint --fix",
     "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.tsx": [
-      "./node_modules/.bin/tslint",
-      "./node_modules/.bin/jest --findRelatedTests --collectCoverage='false'",
-      "git add"
-    ],
-    "*.ts": [
       "./node_modules/.bin/tslint",
       "./node_modules/.bin/jest --findRelatedTests --collectCoverage='false'",
       "git add"
@@ -62,11 +58,7 @@
     "preset": "react-native",
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.ts",
     "collectCoverage": true,
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "moduleNameMapper": {
       "^image![a-zA-Z0-9$_-]+$": "GlobalImageStub",
       "^[@./a-zA-Z0-9$_-]+\\.(png|gif)$": "RelativeImageStub"
@@ -79,7 +71,10 @@
     "testPathIgnorePatterns": [
       "\\.snap$",
       "<rootDir>/node_modules/",
-      "<rootDir>/lib/"
+      "<rootDir>/lib/",
+      "<rootDir>/android/",
+      "<rootDir>/ios/",
+      "<rootDir>/coverage/"
     ],
     "cacheDirectory": ".jest/cache"
   }

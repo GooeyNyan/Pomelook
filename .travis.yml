@@ -10,6 +10,7 @@ install:
   - npm install -g codecov
 script:
   - npm run test --findRelatedTests --collectCoverage='false'
+after_success:
   - codecov
 os:
   - linux

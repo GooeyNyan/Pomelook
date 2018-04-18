@@ -58,3 +58,4 @@ buck-out/
 lib/
 .jest/
 .vscode/
+coverage/
