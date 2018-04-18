@@ -7,6 +7,7 @@
       "tsc --watch & node node_modules/react-native/local-cli/cli.js start",
     "android": "node_modules/.bin/react-native run-android",
     "ios": "node_modules/.bin/react-native run-ios",
+    "eject": "node_modules/.bin/react-native eject",
     "test": "./node_modules/.bin/jest",
     "test:watch": "yarn test --watchAll",
     "test:coverage": "yarn test --coverage",
@@ -16,7 +17,7 @@
   },
   "lint-staged": {
     "*.tsx": [
-      "./node_modules/.bin/tslint",
+      "./node_modules/.bin/tslint -c ./tslint.json",
       "./node_modules/.bin/jest --findRelatedTests --collectCoverage='false'",
       "git add"
     ]

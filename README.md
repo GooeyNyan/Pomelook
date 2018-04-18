@@ -27,6 +27,9 @@ yarn install
 ## 运行项目
 
 ```bash
+# 导出 android 和 ios 代码
+yarn eject
+
 # 运行 tsc，与 react-native cli start
 yarn start
 

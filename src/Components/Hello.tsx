@@ -8,8 +8,6 @@ export interface IProps {
   onDecrement?: () => void;
 }
 
-const voidReturnFn = () => null;
-
 const hello = ({
   name,
   enthusiasmLevel = 1,
@@ -20,28 +18,17 @@ const hello = ({
     throw new Error(`You could be a little more enthusiastic. :D`);
   }
 
+  const decrementButton = decrementBtn(onDecrement);
+  const incrementButton = incrementBtn(onIncrement);
+
   return (
     <View style={styles.root}>
       <Text style={styles.greeting}>
         Hello {name + getExclamationMarks(enthusiasmLevel)}
       </Text>
       <View style={styles.buttons}>
-        <View style={styles.button}>
-          <Button
-            title="-"
-            onPress={onDecrement || voidReturnFn}
-            accessibilityLabel="decrement"
-            color="#208fb2"
-          />
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="+"
-            onPress={onIncrement || voidReturnFn}
-            accessibilityLabel="increment"
-            color="#20b2aa"
-          />
-        </View>
+        {decrementButton}
+        {incrementButton}
       </View>
     </View>
   );
@@ -72,3 +59,28 @@ const styles = StyleSheet.create({
 
 const getExclamationMarks = (numChars: number) =>
   Array.from({ length: numChars + 1 }).join(`!`);
+
+const nullReturnFn = () => null;
+
+const baseButton = ({ title, accessibilityLabel, color }) => handleOnPress => (
+  <View style={styles.button}>
+    <Button
+      title={title}
+      onPress={handleOnPress || nullReturnFn}
+      accessibilityLabel={accessibilityLabel}
+      color={color}
+    />
+  </View>
+);
+
+const decrementBtn = baseButton({
+  title: `-`,
+  accessibilityLabel: `decrement`,
+  color: `#208fb2`
+});
+
+const incrementBtn = baseButton({
+  title: `+`,
+  accessibilityLabel: `increment`,
+  color: `#20b2aa`
+});

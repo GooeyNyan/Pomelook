@@ -4,9 +4,14 @@
  * @flow
  */
 import * as React from "react";
-import { Platform, StyleSheet, Text, TouchableHighlight, View } from "react-native";
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View
+} from "react-native";
 import Hello from "./Components/Hello";
-
 
 const instructions = Platform.select({
   android:
